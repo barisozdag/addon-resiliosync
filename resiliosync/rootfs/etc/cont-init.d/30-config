@@ -1,0 +1,17 @@
+#!/usr/bin/with-contenv bashio
+
+# create dirs
+if ! bashio::fs.directory_exists "/share/resiliosync"; then
+    mkdir /share/resiliosync
+fi
+if ! bashio::fs.directory_exists "/share/downloads"; then
+    mkdir /share/downloads
+fi
+
+# copy config
+if ! bashio::fs.directory_exists "/config/resiliosync"; then
+    mkdir /config/resiliosync
+fi
+if ! bashio::fs.file_exists "/config/resiliosync/sync.conf"; then
+	cp /defaults/sync.conf /config/resiliosync/sync.conf
+fi

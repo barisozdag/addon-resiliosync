@@ -1,0 +1,9 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# barisozdag's Personal Home Assistant Add-ons: Resilio Sync
+# Runs the Resilio Sync
+# ==============================================================================
+bashio::log.info 'Starting the Resilio Sync...'
+
+# Run the Resilio Sync
+exec rslsync --nodaemon --config /config/resiliosync/sync.conf
