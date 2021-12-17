@@ -7,7 +7,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base system
 ARG BUILD_ARCH=aarch64
-ARG SYNC_VERSION=2.7.2.1375
+ARG RELEASE
 
 RUN \
     if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm64"; fi \
@@ -15,7 +15,7 @@ RUN \
     && if [ "${BUILD_ARCH}" = "armv7" ]; then ARCH="armhf"; fi \
     && curl -o \
     /tmp/sync.deb -L \
-        "https://download-cdn.resilio.com/${SYNC_VERSION}/Debian/resilio-sync_${SYNC_VERSION}-1_${ARCH}.deb" \
+        "https://download-cdn.resilio.com/${RELEASE}/Debian/resilio-sync_${RELEASE}-1_${ARCH}.deb" \
     && dpkg -i \
         /tmp/sync.deb \
     && rm -rf \
