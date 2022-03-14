@@ -4,6 +4,7 @@ version: dev
 slug: resiliosync
 description: Sync All Your Data Across All Your Devices
 url: https://github.com/barisozdag/addon-resiliosync
+codenotary: baris@ozdag.net
 webui: http://[HOST]:[PORT:8888]/
 arch:
   - aarch64

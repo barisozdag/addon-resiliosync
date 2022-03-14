@@ -5,3 +5,6 @@ build_from:
   armv7: ghcr.io/hassio-addons/debian-base/armv7:5.3.0
 args:
   release: 2.7.2.1375
+codenotary:
+  base_image: codenotary@frenck.dev
+  signer: baris@ozdag.net
