@@ -1,9 +1,10 @@
-#!/usr/bin/execlineb -S0
+#!/usr/bin/with-contenv bashio
+# shellcheck shell=bash
 # ==============================================================================
 # barisozdag's Personal Home Assistant Add-ons: Resilio Sync
-# Take down the S6 supervision tree when the Resilio Sync fails
+# Runs the Resilio Sync
 # ==============================================================================
-if -n { s6-test $# -ne 0 }
-if -n { s6-test ${1} -eq 256 }
+bashio::log.info 'Starting the Resilio Sync...'
 
-s6-svscanctl -t /var/run/s6/services
+# Run the Resilio Sync
+exec rslsync --nodaemon --config /config/resiliosync/sync.conf
